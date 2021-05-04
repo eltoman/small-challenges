@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class ArraysStream implements ExampleStrategy{
 
@@ -14,7 +15,14 @@ public class ArraysStream implements ExampleStrategy{
     @Override
     public void execute() {
         System.out.println("--- Array Stream testing ---");
-        System.out.println("--- Initial Array: Cities ---");
+
+        int factor = 3;
+        System.out.println(String.format("--- Print all multiple of %d  from 0 TO 100 ---", factor));
+        Arrays.stream(IntStream.range(0, 100).toArray())
+                .filter(x -> x % factor ==0)
+                .forEach(System.out::println);
+
+        System.out.println("\n--- Initial Array: Cities ---");
         List<String> array = new ArrayList<>(Arrays.asList("Buenos Aires", "Córdoba", "La Plata", "Córdoba", "São Paulo"));
         array.forEach(System.out::println);
 
