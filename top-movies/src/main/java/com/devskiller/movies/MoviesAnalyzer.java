@@ -34,7 +34,6 @@ public class MoviesAnalyzer {
             .forEach(entry -> {
                 if(topThree.size() < 3) {
                     topThree.add(entry.getKey());
-                    System.out.println(entry.getKey() + " - " + entry.getValue());
                 }
         });
         return topThree;
