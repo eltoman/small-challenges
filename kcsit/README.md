@@ -33,7 +33,7 @@ Input: null string
 Output: 0
 
 Input: $VmpKVloxbFhOV3RKUnpreFkyZHZTMk16VW5aamJWVm5XVmMxYTB3eU9YbEpSMFpxV1R[KV2VtTjVRbkJpYlZwMlkyMHhhR1JIYkhaaWFVSjJZbWxDYUVsSFVteGtiV3hxV2xOM1oyTXpWbXBoUTBKb1kzbENhbUl5
-Output: 46
+Output: 48
 
 #####Implementation:
 * kcsit/src/main/java/kcsit/ExerciseTwo/ComputeUniqueCharsInString.java
@@ -61,119 +61,11 @@ B03
 A
 AHUS58518SDSFWEEA85005
 
-
-
 Expected output for the input above:
-
 9004A;Lorem ipsum dolor;A85;1000.125547;8524;-1411.1;Lorem ipsum
-
 000014A;Lorem ipsum dolor;C001;85250.12555;8524;8914.41;Lorem ipsum
-
-
-
-
-
-Java code skeleton:
-
-
-
-import java.io.IOException;
-
-import java.nio.file.Files;
-
-import java.nio.file.Path;
-
-import java.util.stream.Stream;
-
-
-
-public class FileProcessor {
-
-    private final Path source;
-
- 
-
-    public FileProcessor(Path source) {
-
-        this.source = source;
-
-    }
-
- 
-
-    public void process() throws IOException {
-
-        FileConsumerFactory fileConsumerFactory = new FileConsumerFactory();
-
-        try (Stream<String> stream = Files.lines(source)) {
-
-            stream.forEach(line -> {
-
-                //One option is to add some logic around this part of the code to skip the lines based on the
-
-                //requirements, but feel free to add the logic wherever you think it the best location
-
-                FileConsumer fileConsumer = fileConsumerFactory.createFileConsumer(line);
-
-                fileConsumer.consume(line);
-
-            });
-
-        }
-
-    }
-
- 
-
-    static class FileConsumerFactory {
-
-        FileConsumer createFileConsumer(String line) {
-
-            //Some logic here to create a valid file consumer.
-
-            //For this example it only return a Default File Consumer
-
-            //You don’t need to care about this method.
-
-            return new DefaultFileConsumer();
-
-        }
-
-    }
-
- 
-
-    interface FileConsumer {
-
-        void consume(String line);
-
-    }
-
- 
-
-    static class DefaultFileConsumer implements FileConsumer {a
-
-        @Override
-
-        public void consume(String line) {
-
-            //Some code is done here, but it is not important for this exercise
-
-        }
-
-    }
-
-}
-
-
 
 
 
 4.    Find a performance issue and implement a fix for it:
       Imagine that the code bellow is facing some performance issues in production. You have the task to spot the biggest bottleneck in this code and write a code to fix it. Unit tests are not required for this exercise.
-
-
-
-
-
-} 
