@@ -5,7 +5,7 @@
 work inside kcsit - using maven
 
 ```bash
-mvn clen install test
+mvn clean test
 ```
 
 ### 1.    Merge two maps
@@ -33,7 +33,7 @@ Input: null string
 Output: 0
 
 Input: $VmpKVloxbFhOV3RKUnpreFkyZHZTMk16VW5aamJWVm5XVmMxYTB3eU9YbEpSMFpxV1R[KV2VtTjVRbkJpYlZwMlkyMHhhR1JIYkhaaWFVSjJZbWxDYUVsSFVteGtiV3hxV2xOM1oyTXpWbXBoUTBKb1kzbENhbUl5
-Output: 48
+Output: 46
 
 #####Implementation:
 * kcsit/src/main/java/kcsit/ExerciseTwo/ComputeUniqueCharsInString.java
@@ -47,25 +47,21 @@ Now the business team asked us to perform some filtering in the data that is rea
 Your task is to write a code that implements this requirement. Your solution should follow good coding practices (clean code, SOLID, etc.). Also keep in mind that in the future more requirements could be added to this feature. For example: the business team could ask us to consider multiple columns in the filter, or even add a completely different filter logic that uses a computation based on values from the current line. So, your code should be extensible, should support adding/removing filters, should support evaluation of multiple filter for the same line, etc.
 Unit tests are mandatory.
 
-Sample data in the source csv file:
-9004A;Lorem ipsum dolor;A85;1000.125547;8524;-1411.1;Lorem ipsum
-8014CD;Lorem ipsum dolor;B02;2000.125547;5524;-5551.1;Lorem ipsum
-000014A;Lorem ipsum dolor;C001;85250.12555;8524;8914.41;Lorem ipsum
-080044Z;Lorem ipsum dolor;B01;8251.155;854;894.47;Lorem ipsum
-...
+#####Sample data in the source csv file:
+* kcsit/src/test/resources/source.csv
 
-Sample data in the invalid_data.csv file:
-B01
-B02
-B03
-A
-AHUS58518SDSFWEEA85005
+#####Sample data in the invalid_data.csv file:
+* kcsit/src/main/resources/invalid_data.csv
 
-Expected output for the input above:
+#####Expected output for the input above:
 9004A;Lorem ipsum dolor;A85;1000.125547;8524;-1411.1;Lorem ipsum
 000014A;Lorem ipsum dolor;C001;85250.12555;8524;8914.41;Lorem ipsum
 
+#####Implementation:
+* kcsit/src/main/java/kcsit/ExerciseThree
+#####Unit Test:
+* kcsit/src/test/java/kcsit/ExerciseThree
 
 
-4.    Find a performance issue and implement a fix for it:
+### 4. Find a performance issue and implement a fix for it:
       Imagine that the code bellow is facing some performance issues in production. You have the task to spot the biggest bottleneck in this code and write a code to fix it. Unit tests are not required for this exercise.
