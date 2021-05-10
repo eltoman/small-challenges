@@ -64,7 +64,7 @@ public class Formatter {
      */
     void makeFlow(Row row, Writer output) throws IOException {
         //Extracts only the elements which id matches the row.getId()
-        final Collection<Element> matchingEntries = this.entries.stream()
+        final Collection<Element> matchingEntries = this.entries.parallelStream()
                 .filter(entry -> entry.getId() == row.getId()).collect(Collectors.toSet());
 
         for (Element element : matchingEntries) {
